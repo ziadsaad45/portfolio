@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ziad Saad - Software Engineer & Educator</title>
+    <title>Smart Business - Renewable Energy & Electrical Solutions</title>
     <style>
         * {
             margin: 0;
@@ -11,228 +11,123 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #2563eb;
-            --secondary: #0ea5e9;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --accent: #6366f1;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            overflow-x: hidden;
-            width: 100%;
-            min-height: 100vh;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            width: 100%;
         }
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         nav {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
-            width: 100%;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffd700;
         }
 
-        nav ul {
-            list-style: none;
+        .nav-links {
             display: flex;
+            list-style: none;
             gap: 2rem;
         }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-btn:hover {
-            color: var(--secondary);
-        }
-
-        nav a {
+        .nav-links a {
             color: white;
             text-decoration: none;
-            transition: all 0.3s;
-            position: relative;
+            transition: color 0.3s;
+            font-weight: 500;
         }
 
-        nav a:hover {
-            color: var(--secondary);
+        .nav-links a:hover {
+            color: #ffd700;
         }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: width 0.3s;
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
         }
 
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .active-link {
-            color: var(--secondary) !important;
-        }
-
-        .active-link::after {
-            width: 100% !important;
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 50%, #334155 100%);
-            color: white;
-            padding: 150px 2rem 100px;
+            margin-top: 70px;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('switchgear-control-cabinet-electro-distributor-elektrik.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            color: white;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="2" fill="%23ffffff" opacity="0.1"/></svg>');
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            padding: 0 1rem;
-        }
-
-        .hero h1 {
+        .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
+            animation: fadeInDown 1s;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
             animation: fadeInUp 1s;
         }
 
-        .hero .subtitle {
-            font-size: 1.5rem;
-            color: var(--secondary);
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s 0.2s both;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s 0.4s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            animation: fadeInUp 1s 0.6s both;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
+        .cta-button {
             display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #ffd700;
+            color: #1e3c72;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1.5s;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,215,0,0.3);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: var(--dark);
-        }
-
-        /* Section Styling */
+        /* Section Styles */
         section {
-            padding: 80px 2rem;
-            max-width: 1400px;
+            padding: 5rem 2rem;
+            max-width: 1200px;
             margin: 0 auto;
-            width: 100%;
         }
 
         .section-title {
-            font-size: 2.5rem;
             text-align: center;
+            font-size: 2.5rem;
             margin-bottom: 3rem;
+            color: #1e3c72;
             position: relative;
             padding-bottom: 1rem;
         }
@@ -243,800 +138,615 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 100px;
             height: 4px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 2px;
+            background: #ffd700;
         }
 
         /* About Section */
-        #about {
-            background: var(--light);
-        }
-
-        .about-content {
+        .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            width: 100%;
-        }
-
-        .about-text h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .stat-card {
-            background: white;
+        .about-card {
+            background: #f8f9fa;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
 
-        .stat-card:hover {
+        .about-card:hover {
             transform: translateY(-5px);
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary);
-        }
-
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background: var(--primary);
-        }
-
-        .timeline-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-content {
-            width: 45%;
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            position: relative;
-            transition: transform 0.3s;
-        }
-
-        .timeline-content:hover {
-            transform: scale(1.02);
-        }
-
-        .timeline-content h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-date {
-            color: var(--accent);
-            font-weight: 600;
+        .about-card h3 {
+            color: #1e3c72;
             margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border: 4px solid white;
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px var(--primary);
-        }
-
-        /* Skills Section */
-        #skills {
-            background: var(--light);
-        }
-
-        .skills-grid {
+        /* Services Section */
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            width: 100%;
+            margin-top: 2rem;
         }
 
-        .skill-category {
+        .service-card {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .skill-category h3 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-category h3::before {
-            content: '▶';
-            color: var(--accent);
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: transform 0.3s;
-        }
-
-        .skill-tag:hover {
-            transform: scale(1.1);
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2rem;
-            width: 100%;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-header {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            padding: 2rem;
-            min-height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .project-header h3 {
-            font-size: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #1e3c72;
         }
 
-        .project-body {
-            padding: 2rem;
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        .project-date {
-            color: var(--accent);
-            font-weight: 600;
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .service-card h3 {
+            color: #1e3c72;
             margin-bottom: 1rem;
         }
 
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .value-item:hover {
+            transform: scale(1.05);
+        }
+
+        .value-item h3 {
+            margin-bottom: 0.5rem;
+            color: #ffd700;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card h4 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
         /* Contact Section */
-        #contact {
-            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+        .contact {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
             text-align: center;
+            border-radius: 10px;
+            padding: 4rem 2rem;
         }
 
-        #contact .section-title {
+        .contact h2 {
             color: white;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+        .contact p {
+            font-size: 1.2rem;
+            margin: 2rem 0;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1.1rem;
+        .contact-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #ffd700;
+            color: #1e3c72;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s;
         }
 
-        .contact-item svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--secondary);
+        .contact-button:hover {
+            transform: scale(1.1);
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
+            background: #1a1a1a;
             color: white;
             text-align: center;
             padding: 2rem;
         }
 
-        /* Responsive */
-        @media (min-width: 1920px) {
-            section {
-                max-width: 1600px;
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
             }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        
+        /* Tablets and small laptops */
+        @media (max-width: 1024px) {
             nav {
-                max-width: 1600px;
+                padding: 0 1.5rem;
             }
 
-            .hero h1 {
-                font-size: 4rem;
+            section {
+                padding: 4rem 1.5rem;
             }
 
-            .hero .subtitle {
-                font-size: 1.8rem;
-            }
-
-            .section-title {
+            .hero-content h1 {
                 font-size: 3rem;
             }
-        }
 
-        @media (min-width: 1440px) and (max-width: 1919px) {
-            .projects-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            nav ul {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                background: var(--dark);
-                flex-direction: column;
-                padding: 2rem;
+            .about-grid,
+            .services-grid,
+            .values-grid,
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 gap: 1.5rem;
-                transition: left 0.3s ease;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-                z-index: 999;
             }
+        }
 
-            nav ul.active {
-                left: 0;
-            }
-
-            nav ul li {
-                text-align: center;
-                padding: 0.5rem 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-
-            nav ul li:last-child {
-                border-bottom: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline::before {
-                left: 0;
-            }
-
-            .timeline-item {
-                flex-direction: column !important;
-            }
-
-            .timeline-content {
-                width: 100%;
-                margin-left: 2rem;
-            }
-
-            .timeline-dot {
-                left: 0;
-            }
-
-            .cta-buttons {
+        /* Mobile landscape and tablets */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
                 flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
                 width: 100%;
+                background: #1e3c72;
+                padding: 2rem;
+                gap: 1rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                height: 500px;
+                margin-top: 70px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
                 padding: 0 1rem;
             }
 
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 1.5rem;
+            .hero-content p {
+                font-size: 1.1rem;
+                padding: 0 1rem;
             }
 
             section {
-                padding: 60px 1rem;
+                padding: 3rem 1rem;
             }
 
             .section-title {
                 font-size: 2rem;
             }
-        }
 
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.8rem;
+            .about-grid,
+            .services-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
+            .values-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+
+            .service-icon {
+                font-size: 2.5rem;
+            }
+
+            .contact {
+                padding: 3rem 1.5rem;
+            }
+
+            .contact p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
             .logo {
                 font-size: 1.2rem;
             }
 
-            .stat-number {
+            .hero {
+                height: 400px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+
+            .cta-button,
+            .contact-button {
+                padding: 0.8rem 2rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            section {
+                padding: 2.5rem 1rem;
+            }
+
+            .about-card,
+            .service-card,
+            .team-card {
+                padding: 1.5rem;
+            }
+
+            .value-item {
+                padding: 1.5rem 1rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-icon {
                 font-size: 2rem;
             }
 
-            .project-header h3 {
+            .about-card h3,
+            .service-card h3,
+            .team-card h3 {
                 font-size: 1.2rem;
+            }
+
+            .contact {
+                padding: 2.5rem 1rem;
+            }
+
+            footer {
+                padding: 1.5rem 1rem;
+                font-size: 0.9rem;
             }
         }
 
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1s forwards;
+        /* Extra small devices */
+        @media (max-width: 360px) {
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-content p {
+                font-size: 0.85rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .cta-button,
+            .contact-button {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.85rem;
+            }
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
+        /* Large screens */
+        @media (min-width: 1400px) {
+            .hero {
+                height: 700px;
+            }
+
+            .hero-content h1 {
+                font-size: 4rem;
+            }
+
+            .hero-content p {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 6rem 2rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Ziad Saad</div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                <span id="menuIcon">☰</span>
-            </button>
-            <ul id="navMenu">
+            <div class="logo">Smart Business</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#values">Values</a></li>
+                <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Ziad Ahmed Saad</h1>
-            <p class="subtitle">Software Engineer & Programming Educator</p>
-            <p>3+ years building scalable systems & empowering 100+ students | IoT • ERP • Full-Stack Development</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#projects" class="btn btn-secondary">View Projects</a>
-            </div>
+            <h1>Smart Business</h1>
+            <p>Powering Tomorrow's Energy Infrastructure Today</p>
+            <a href="#contact" class="cta-button">Get Started</a>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Software Engineer & Programming Educator</h3>
-                <p>Software Engineer and Programming Educator with 3+ years of experience in full-stack development, IoT systems, and ERP solutions. Successfully taught 100+ students (450+ hours) while developing enterprise systems at El Sewedy Electric. Proficient in Python, Java, Django, and Oracle technologies with proven ability to simplify complex concepts and deliver scalable solutions.</p>
-                <p>My dual role as both an engineer and educator has given me a unique perspective on technology—combining hands-on development expertise with the ability to mentor and inspire the next generation of programmers. From architecting IoT monitoring systems that reduce downtime by 25% to increasing student coding proficiency through interactive curricula, I deliver measurable impact in everything I build and teach.</p>
+        <h2 class="section-title">Who We Are</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+            Smart Business is a dynamic and reliable supply and services company specializing in renewable energy, electrical distribution, and high-voltage (HV) and low-voltage (LV) projects. We support utilities, EPC contractors, developers, and industrial clients by delivering quality materials, responsive support, and practical project solutions.
+        </p>
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>Our Mission</h3>
+                <p>To provide dependable, high-quality supply materials and project support for renewable and electrical infrastructure projects, ensuring safety, efficiency, and long-term value through responsive service and 24/7 emergency support.</p>
             </div>
-            <div class="stats">
-                <div class="stat-card">
-                    <div class="stat-number">450+</div>
-                    <div>Teaching Hours</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100+</div>
-                    <div>Students Mentored</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">3+</div>
-                    <div>Years Experience</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">10+</div>
-                    <div>Technologies Mastered</div>
-                </div>
+            <div class="about-card">
+                <h3>Our Vision</h3>
+                <p>To become a trusted regional partner in renewable energy and electrical distribution by setting benchmarks in reliability, technical competence, and customer satisfaction while contributing to a sustainable energy future.</p>
+            </div>
+            <div class="about-card">
+                <h3>24/7 Emergency Support</h3>
+                <p>We provide round-the-clock emergency call attendance to support critical operations and urgent site requirements. Our rapid-response approach minimizes downtime and ensures continuity.</p>
             </div>
         </div>
     </section>
 
-    <section id="experience">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Programming Instructor</h3>
-                    <div class="timeline-date">June 2024 - Present</div>
-                    <h4>iSchool (DEMI Program) - Remote</h4>
-                    <ul>
-                        <li>Teach Python and Scratch to 50+ students aged 8-18, increasing coding proficiency by 40% through interactive curriculum</li>
-                        <li>Designed 20+ project-based lessons enhancing computational thinking and problem-solving skills</li>
-                        <li>Mentored students in developing 15+ real-world projects with 85% completion rate</li>
-                        <li>Collaborated with Ministry of Communications on national digital education initiative reaching 500+ youth</li>
-                    </ul>
-                </div>
-                <div class="timeline-dot"></div>
+    <!-- Services Section -->
+    <section id="services" style="background: #f8f9fa;">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Renewable Energy Projects</h3>
+                <p>Solar and hybrid systems with specialized materials tailored for utility-scale and commercial installations.</p>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Founder & CEO</h3>
-                    <div class="timeline-date">2022 - August 2023</div>
-                    <h4>ACA (Ace Series Academy)</h4>
-                    <ul>
-                        <li>Founded programming academy serving 100+ students with 90% course completion rate</li>
-                        <li>Managed 8-person team of instructors, implementing training program that improved teaching quality by 35%</li>
-                        <li>Created 50+ comprehensive course materials for Web Development, Python, and Java curricula</li>
-                        <li>Produced 100+ educational content pieces generating 10K+ social media engagements on programming concepts</li>
-                    </ul>
-                </div>
-                <div class="timeline-dot"></div>
+            <div class="service-card">
+                <div class="service-icon">🔌</div>
+                <h3>Electrical Distribution</h3>
+                <p>Complete electrical distribution network solutions with quality materials and technical expertise.</p>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Python & Scratch Instructor</h3>
-                    <div class="timeline-date">January 2022 - March 2023</div>
-                    <h4>Techware Academy</h4>
-                    <ul>
-                        <li>Taught 60+ students Python and Scratch fundamentals with 88% achieving advanced certification</li>
-                        <li>Developed curriculum integrating robotics with programming, increasing student engagement by 45%</li>
-                        <li>Mentored students in building 25+ robotics projects combining hardware and software</li>
-                        <li>Reduced student drop-out rate by 30% through personalized learning approaches</li>
-                    </ul>
-                </div>
-                <div class="timeline-dot"></div>
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>HV & LV Projects</h3>
+                <p>High-voltage and low-voltage project participation including installation, testing, and commissioning support.</p>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Odoo Developer Intern</h3>
-                    <div class="timeline-date">October 2022 - March 2023</div>
-                    <h4>ZAD SOLUTION Company - Giza</h4>
-                    <ul>
-                        <li>Developed 5+ custom Odoo ERP modules for inventory and HR management serving 200+ end users</li>
-                        <li>Reduced manual data entry by 40% through automated workflow implementations using Python and PostgreSQL</li>
-                        <li>Optimized database queries improving system performance by 25%</li>
-                        <li>Completed intensive Odoo training program, mastering OOP principles and enterprise architecture</li>
-                    </ul>
-                </div>
-                <div class="timeline-dot"></div>
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Substations & Switchyards</h3>
+                <p>Comprehensive material supply and technical coordination for substations and switchyard projects.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📦</div>
+                <h3>Supply & Procurement</h3>
+                <p>Cables, switchgear, protection equipment, BoP materials, testing tools, and consumables.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚨</div>
+                <h3>Emergency Response</h3>
+                <p>24/7 emergency support for critical operations, urgent requirements, and rapid fault resolution.</p>
             </div>
         </div>
     </section>
 
-    <section id="skills">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Programming Languages</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Java 8 & 17</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">Dart</span>
-                    <span class="skill-tag">C/C++</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">PL/SQL</span>
-                </div>
+    <!-- Values Section -->
+    <section id="values">
+        <h2 class="section-title">Our Values</h2>
+        <div class="values-grid">
+            <div class="value-item">
+                <h3>🛡️ Safety First</h3>
+                <p>Compliance with international standards and best HSE practices</p>
             </div>
-
-            <div class="skill-category">
-                <h3>Web Development</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">HTML/CSS</span>
-                    <span class="skill-tag">Django</span>
-                    <span class="skill-tag">RESTful API</span>
-                    <span class="skill-tag">Oracle Apex</span>
-                    <span class="skill-tag">Node-RED</span>
-                </div>
+            <div class="value-item">
+                <h3>⏱️ Reliability</h3>
+                <p>On-time delivery and consistent quality</p>
             </div>
-
-            <div class="skill-category">
-                <h3>Databases & Cloud</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Oracle Database</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">OCI</span>
-                </div>
+            <div class="value-item">
+                <h3>🎯 Technical Excellence</h3>
+                <p>Practical, standards-driven solutions</p>
             </div>
-
-            <div class="skill-category">
-                <h3>Software Engineering</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">OOP</span>
-                    <span class="skill-tag">SOLID Principles</span>
-                    <span class="skill-tag">Design Patterns</span>
-                    <span class="skill-tag">Algorithms & Data Structures</span>
-                    <span class="skill-tag">Git/GitHub</span>
-                </div>
+            <div class="value-item">
+                <h3>🤝 Customer Focus</h3>
+                <p>Flexible support and fast response</p>
             </div>
-
-            <div class="skill-category">
-                <h3>Testing & Automation</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Selenium</span>
-                    <span class="skill-tag">Manual Testing</span>
-                    <span class="skill-tag">IoT/PLC</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Mobile & ERP</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Android Native</span>
-                    <span class="skill-tag">OpenERP/Odoo</span>
-                    <span class="skill-tag">Agile/Scrum</span>
-                </div>
+            <div class="value-item">
+                <h3>✨ Integrity</h3>
+                <p>Transparent and ethical business practices</p>
             </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>IoT Industrial Monitoring System</h3>
-                </div>
-                <div class="project-body">
-                    <div class="project-date">2024 - Present</div>
-                    <p><strong>El Sewedy Electric Sedeco</strong></p>
-                    <p><strong>Technologies:</strong> Mitsubishi PLC, NovaCon Gateway, Node-RED, MQTT, Python</p>
-                    <ul>
-                        <li>Architected real-time IoT monitoring system for 10+ industrial machines across 3 production facilities</li>
-                        <li>Integrated PLC data extraction reducing manual monitoring by 70% and improving response time</li>
-                        <li>Decreased equipment downtime by 25% through predictive maintenance alerts and automated reporting</li>
-                        <li>Implemented MQTT protocol for seamless data transmission, processing 1000+ data points per minute</li>
-                        <li>Currently finalizing system deployment with expected ROI of 40% within first year</li>
-                    </ul>
-                </div>
+    <!-- Team Section -->
+    <section id="team" style="background: #f8f9fa;">
+        <h2 class="section-title">Our Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <h3>Managing Director</h3>
+                <h4>Founder</h4>
+                <p>Provides strategic direction, business development leadership, and overall governance. Oversees client relationships and long-term growth.</p>
             </div>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>Enterprise Management Platform</h3>
-                </div>
-                <div class="project-body">
-                    <div class="project-date">2023 - Present</div>
-                    <p><strong>ElSewedy Electric</strong></p>
-                    <p><strong>Technologies:</strong> Oracle APEX, PL/SQL, RESTful API, Oracle Database</p>
-                    <ul>
-                        <li>Developed comprehensive system managing 200+ employee reports monthly, reducing processing time by 30%</li>
-                        <li>Built automated finance reporting module handling $2M+ in transactions with 99.9% accuracy</li>
-                        <li>Implemented production tracking dashboard monitoring 50+ products across multiple facilities</li>
-                        <li>Created self-service portal for license requests and training applications, decreasing HR workload by 45%</li>
-                        <li>Integrated role-based access control securing sensitive data for 300+ users</li>
-                    </ul>
-                </div>
+            <div class="team-card">
+                <h3>Operations Manager</h3>
+                <h4>Operations</h4>
+                <p>Responsible for day-to-day operations, project coordination, logistics, and timely material delivery across all projects.</p>
             </div>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>Educational Platform & Content</h3>
-                </div>
-                <div class="project-body">
-                    <div class="project-date">2022 - 2023</div>
-                    <p><strong>Ace Series Academy</strong></p>
-                    <p><strong>Technologies:</strong> Python, JavaScript, Django, Custom CMS</p>
-                    <ul>
-                        <li>Designed comprehensive curriculum for Web Development, Python, and Java serving 100+ students</li>
-                        <li>Created 50+ interactive coding exercises and activities increasing student engagement by 60%</li>
-                        <li>Developed automated assessment system reducing grading time by 50% while improving feedback quality</li>
-                        <li>Produced 100+ educational videos and social media content generating 10K+ views</li>
-                        <li>Achieved 90% student satisfaction rate and 85% course completion rate</li>
-                    </ul>
-                </div>
+            <div class="team-card">
+                <h3>Technical & Engineering Lead</h3>
+                <h4>Engineering</h4>
+                <p>Leads technical support, material specifications, compliance with standards, and coordination with EPCs and utilities.</p>
+            </div>
+            <div class="team-card">
+                <h3>Procurement Manager</h3>
+                <h4>Supply Chain</h4>
+                <p>Manages supplier relationships, sourcing, quality control, and inventory planning for reliable material supply.</p>
+            </div>
+            <div class="team-card">
+                <h3>HSE & Quality Coordinator</h3>
+                <h4>Safety & Quality</h4>
+                <p>Ensures compliance with health, safety, environmental, and quality standards across all activities.</p>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Let's collaborate on your next project or discuss opportunities in software development and education.</p>
-        <div class="contact-info">
-            <div class="contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                <a href="mailto:zyadtry121@gmail.com" style="color: white;">zyadtry121@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                <span>01029704749</span>
-            </div>
-            <div class="contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                <span>El-Shourk City, New Cairo</span>
-            </div>
+        <div class="contact">
+            <h2>Let's Work Together</h2>
+            <p>Smart Business is ready to support your renewable energy, distribution, and HV/LV projects with reliable supply, technical understanding, and 24/7 commitment.</p>
+            <a href="mailto:info@smartbusiness.com" class="contact-button">Contact Us</a>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Ziad Ahmed Saad. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">Building the future, one line of code at a time.</p>
+        <p>&copy; 2024 Smart Business. All rights reserved. | Powering a Sustainable Future</p>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-        const menuIcon = document.getElementById('menuIcon');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            menuIcon.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#navMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                menuIcon.textContent = '☰';
-            });
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav')) {
-                navMenu.classList.remove('active');
-                menuIcon.textContent = '☰';
-            }
-        });
-
-        // Smooth scrolling
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const headerOffset = 80;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
+                    navLinks.classList.remove('active');
                 }
             });
         });
 
-        // Fade-in animation on scroll
+        // Scroll Animation
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '0';
-                    entry.target.style.animation = 'fadeInUp 1s forwards';
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.timeline-item, .skill-category, .project-card, .stat-card').forEach(el => {
+        document.querySelectorAll('.about-card, .service-card, .value-item, .team-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
-        });
-
-        // Add active state to nav links on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.remove('active-link');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active-link');
-                }
-            });
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero && scrolled < hero.offsetHeight) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-
-        // Add loading animation
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                document.body.style.transition = 'opacity 0.5s';
-                document.body.style.opacity = '1';
-            }, 100);
         });
     </script>
 </body>
