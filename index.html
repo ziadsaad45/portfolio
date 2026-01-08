@@ -17,7 +17,6 @@
             color: #333;
         }
 
-        /* Header & Navigation */
         header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
@@ -72,14 +71,12 @@
             height: 3px;
             background: white;
             margin: 3px 0;
-            transition: 0.3s;
         }
 
-        /* Hero Section */
         .hero {
             margin-top: 70px;
             height: 600px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('switchgear-control-cabinet-electro-distributor-elektrik.jpg') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), #1e3c72;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -90,13 +87,11 @@
         .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            animation: fadeInDown 1s;
         }
 
         .hero-content p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            animation: fadeInUp 1s;
         }
 
         .cta-button {
@@ -107,16 +102,13 @@
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeIn 1.5s;
+            transition: transform 0.3s;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255,215,0,0.3);
         }
 
-        /* Section Styles */
         section {
             padding: 5rem 2rem;
             max-width: 1200px;
@@ -143,125 +135,205 @@
             background: #ffd700;
         }
 
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .about-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .about-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .about-card h3 {
-            color: #1e3c72;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        /* Services Section */
-        .services-grid {
+        .about-grid, .services-grid, .products-grid, .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .service-card {
+        .about-card, .service-card, .product-card, .team-card {
             background: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid #1e3c72;
+            transition: transform 0.3s;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        .about-card:hover, .service-card:hover, .product-card:hover, .team-card:hover {
+            transform: translateY(-5px);
         }
 
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .product-card {
+            cursor: pointer;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
             color: #ffd700;
         }
 
-        .service-card h3 {
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
             color: #1e3c72;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* Values Section */
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        .product-price {
+            color: #ffd700;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
         }
 
-        .value-item {
-            text-align: center;
+        .view-details-btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
             padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .value-item:hover {
-            transform: scale(1.05);
-        }
-
-        .value-item h3 {
-            margin-bottom: 0.5rem;
-            color: #ffd700;
-        }
-
-        /* Team Section */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .team-card {
-            background: white;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
+            position: relative;
         }
 
-        .team-card:hover {
-            transform: translateY(-5px);
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
         }
 
-        .team-card h3 {
-            color: #1e3c72;
-            margin-bottom: 0.5rem;
+        .modal-body {
+            padding: 2rem;
         }
 
-        .team-card h4 {
+        .modal-product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
             color: #ffd700;
-            margin-bottom: 1rem;
-            font-weight: normal;
+            border-radius: 10px;
+            margin-bottom: 2rem;
         }
 
-        /* Contact Section */
+        .modal-product-price {
+            color: #ffd700;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .product-specs {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+
+        .product-specs h4 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        .product-specs ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-specs li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #1e3c72;
+            background: white;
+            color: #1e3c72;
+            font-size: 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quantity-input {
+            width: 80px;
+            height: 40px;
+            text-align: center;
+            font-size: 1.2rem;
+            border: 2px solid #1e3c72;
+            border-radius: 5px;
+        }
+
+        .quote-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
         .contact {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
@@ -270,31 +342,6 @@
             padding: 4rem 2rem;
         }
 
-        .contact h2 {
-            color: white;
-        }
-
-        .contact p {
-            font-size: 1.2rem;
-            margin: 2rem 0;
-        }
-
-        .contact-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: #ffd700;
-            color: #1e3c72;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.3s;
-        }
-
-        .contact-button:hover {
-            transform: scale(1.1);
-        }
-
-        /* Footer */
         footer {
             background: #1a1a1a;
             color: white;
@@ -302,64 +349,6 @@
             padding: 2rem;
         }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Responsive Design */
-        
-        /* Tablets and small laptops */
-        @media (max-width: 1024px) {
-            nav {
-                padding: 0 1.5rem;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-
-            .about-grid,
-            .services-grid,
-            .values-grid,
-            .team-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 1.5rem;
-            }
-        }
-
-        /* Mobile landscape and tablets */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -370,8 +359,6 @@
                 width: 100%;
                 background: #1e3c72;
                 padding: 2rem;
-                gap: 1rem;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             }
 
             .nav-links.active {
@@ -382,167 +369,13 @@
                 display: flex;
             }
 
-            .logo {
-                font-size: 1.5rem;
-            }
-
-            .hero {
-                height: 500px;
-                margin-top: 70px;
-            }
-
             .hero-content h1 {
-                font-size: 2.5rem;
-                padding: 0 1rem;
-            }
-
-            .hero-content p {
-                font-size: 1.1rem;
-                padding: 0 1rem;
-            }
-
-            section {
-                padding: 3rem 1rem;
-            }
-
-            .section-title {
                 font-size: 2rem;
-            }
-
-            .about-grid,
-            .services-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .values-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 1rem;
-            }
-
-            .service-icon {
-                font-size: 2.5rem;
-            }
-
-            .contact {
-                padding: 3rem 1.5rem;
-            }
-
-            .contact p {
-                font-size: 1rem;
-            }
-        }
-
-        /* Small mobile devices */
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            .hero {
-                height: 400px;
-            }
-
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-content p {
-                font-size: 0.9rem;
-            }
-
-            .cta-button,
-            .contact-button {
-                padding: 0.8rem 2rem;
-                font-size: 0.9rem;
-            }
-
-            .section-title {
-                font-size: 1.6rem;
-            }
-
-            section {
-                padding: 2.5rem 1rem;
-            }
-
-            .about-card,
-            .service-card,
-            .team-card {
-                padding: 1.5rem;
-            }
-
-            .value-item {
-                padding: 1.5rem 1rem;
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-icon {
-                font-size: 2rem;
-            }
-
-            .about-card h3,
-            .service-card h3,
-            .team-card h3 {
-                font-size: 1.2rem;
-            }
-
-            .contact {
-                padding: 2.5rem 1rem;
-            }
-
-            footer {
-                padding: 1.5rem 1rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Extra small devices */
-        @media (max-width: 360px) {
-            .hero-content h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero-content p {
-                font-size: 0.85rem;
-            }
-
-            .section-title {
-                font-size: 1.4rem;
-            }
-
-            .cta-button,
-            .contact-button {
-                padding: 0.7rem 1.5rem;
-                font-size: 0.85rem;
-            }
-        }
-
-        /* Large screens */
-        @media (min-width: 1400px) {
-            .hero {
-                height: 700px;
-            }
-
-            .hero-content h1 {
-                font-size: 4rem;
-            }
-
-            .hero-content p {
-                font-size: 1.5rem;
-            }
-
-            section {
-                padding: 6rem 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
             <div class="logo">Smart Business</div>
@@ -550,8 +383,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#values">Values</a></li>
-                <li><a href="#team">Team</a></li>
+                <li><a href="#shop">Shop</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu" id="mobileMenu">
@@ -562,7 +394,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Smart Business</h1>
@@ -571,140 +402,119 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <h2 class="section-title">Who We Are</h2>
         <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
-            Smart Business is a dynamic and reliable supply and services company specializing in renewable energy, electrical distribution, and high-voltage (HV) and low-voltage (LV) projects. We support utilities, EPC contractors, developers, and industrial clients by delivering quality materials, responsive support, and practical project solutions.
+            Smart Business specializes in renewable energy, electrical distribution, and high-voltage projects.
         </p>
-        <div class="about-grid">
-            <div class="about-card">
-                <h3>Our Mission</h3>
-                <p>To provide dependable, high-quality supply materials and project support for renewable and electrical infrastructure projects, ensuring safety, efficiency, and long-term value through responsive service and 24/7 emergency support.</p>
+    </section>
+
+    <section id="shop">
+        <h2 class="section-title">Our Products</h2>
+        <div class="products-grid">
+            <div class="product-card" onclick="openProductModal(1)">
+                <div class="product-image">🔌</div>
+                <div class="product-info">
+                    <h3>High Voltage Cables</h3>
+                    <p class="product-price">Contact for Price</p>
+                    <p>Premium quality HV cables for power distribution.</p>
+                    <button class="view-details-btn">View Details</button>
+                </div>
             </div>
-            <div class="about-card">
-                <h3>Our Vision</h3>
-                <p>To become a trusted regional partner in renewable energy and electrical distribution by setting benchmarks in reliability, technical competence, and customer satisfaction while contributing to a sustainable energy future.</p>
+
+            <div class="product-card" onclick="openProductModal(2)">
+                <div class="product-image">⚡</div>
+                <div class="product-info">
+                    <h3>Circuit Breakers</h3>
+                    <p class="product-price">Contact for Price</p>
+                    <p>Industrial-grade circuit breakers.</p>
+                    <button class="view-details-btn">View Details</button>
+                </div>
             </div>
-            <div class="about-card">
-                <h3>24/7 Emergency Support</h3>
-                <p>We provide round-the-clock emergency call attendance to support critical operations and urgent site requirements. Our rapid-response approach minimizes downtime and ensures continuity.</p>
+
+            <div class="product-card" onclick="openProductModal(3)">
+                <div class="product-image">🔋</div>
+                <div class="product-info">
+                    <h3>Solar Panels</h3>
+                    <p class="product-price">Contact for Price</p>
+                    <p>High-efficiency solar panels.</p>
+                    <button class="view-details-btn">View Details</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" style="background: #f8f9fa;">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">⚡</div>
-                <h3>Renewable Energy Projects</h3>
-                <p>Solar and hybrid systems with specialized materials tailored for utility-scale and commercial installations.</p>
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalProductName"></h2>
+                <button class="close-modal" onclick="closeProductModal()">×</button>
             </div>
-            <div class="service-card">
-                <div class="service-icon">🔌</div>
-                <h3>Electrical Distribution</h3>
-                <p>Complete electrical distribution network solutions with quality materials and technical expertise.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⚙️</div>
-                <h3>HV & LV Projects</h3>
-                <p>High-voltage and low-voltage project participation including installation, testing, and commissioning support.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🏗️</div>
-                <h3>Substations & Switchyards</h3>
-                <p>Comprehensive material supply and technical coordination for substations and switchyard projects.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📦</div>
-                <h3>Supply & Procurement</h3>
-                <p>Cables, switchgear, protection equipment, BoP materials, testing tools, and consumables.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🚨</div>
-                <h3>Emergency Response</h3>
-                <p>24/7 emergency support for critical operations, urgent requirements, and rapid fault resolution.</p>
+            <div class="modal-body">
+                <div class="modal-product-image" id="modalProductIcon"></div>
+                <p class="modal-product-price" id="modalProductPrice"></p>
+                <p id="modalProductDescription"></p>
+                
+                <div class="product-specs">
+                    <h4>Product Specifications</h4>
+                    <ul id="modalProductSpecs"></ul>
+                </div>
+
+                <div class="quantity-selector">
+                    <label>Quantity:</label>
+                    <div>
+                        <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                        <input type="number" id="quantityInput" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                    </div>
+                </div>
+
+                <a href="#" class="quote-btn" onclick="sendWhatsAppQuote()">
+                    📱 Request Quote on WhatsApp
+                </a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Values Section -->
-    <section id="values">
-        <h2 class="section-title">Our Values</h2>
-        <div class="values-grid">
-            <div class="value-item">
-                <h3>🛡️ Safety First</h3>
-                <p>Compliance with international standards and best HSE practices</p>
-            </div>
-            <div class="value-item">
-                <h3>⏱️ Reliability</h3>
-                <p>On-time delivery and consistent quality</p>
-            </div>
-            <div class="value-item">
-                <h3>🎯 Technical Excellence</h3>
-                <p>Practical, standards-driven solutions</p>
-            </div>
-            <div class="value-item">
-                <h3>🤝 Customer Focus</h3>
-                <p>Flexible support and fast response</p>
-            </div>
-            <div class="value-item">
-                <h3>✨ Integrity</h3>
-                <p>Transparent and ethical business practices</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" style="background: #f8f9fa;">
-        <h2 class="section-title">Our Team</h2>
-        <div class="team-grid">
-            <div class="team-card">
-                <h3>Managing Director</h3>
-                <h4>Founder</h4>
-                <p>Provides strategic direction, business development leadership, and overall governance. Oversees client relationships and long-term growth.</p>
-            </div>
-            <div class="team-card">
-                <h3>Operations Manager</h3>
-                <h4>Operations</h4>
-                <p>Responsible for day-to-day operations, project coordination, logistics, and timely material delivery across all projects.</p>
-            </div>
-            <div class="team-card">
-                <h3>Technical & Engineering Lead</h3>
-                <h4>Engineering</h4>
-                <p>Leads technical support, material specifications, compliance with standards, and coordination with EPCs and utilities.</p>
-            </div>
-            <div class="team-card">
-                <h3>Procurement Manager</h3>
-                <h4>Supply Chain</h4>
-                <p>Manages supplier relationships, sourcing, quality control, and inventory planning for reliable material supply.</p>
-            </div>
-            <div class="team-card">
-                <h3>HSE & Quality Coordinator</h3>
-                <h4>Safety & Quality</h4>
-                <p>Ensures compliance with health, safety, environmental, and quality standards across all activities.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
     <section id="contact">
         <div class="contact">
             <h2>Let's Work Together</h2>
-            <p>Smart Business is ready to support your renewable energy, distribution, and HV/LV projects with reliable supply, technical understanding, and 24/7 commitment.</p>
-            <a href="mailto:info@smartbusiness.com" class="contact-button">Contact Us</a>
+            <p>Contact us for your renewable energy needs.</p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Smart Business. All rights reserved. | Powering a Sustainable Future</p>
+        <p>&copy; 2024 Smart Business. All rights reserved.</p>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+        const products = {
+            1: {
+                name: "High Voltage Cables",
+                icon: "🔌",
+                price: "Contact for Price",
+                description: "Premium quality high voltage cables for power distribution.",
+                specs: ["Voltage: Up to 132kV", "Conductor: Aluminum/Copper", "Standards: IEC 60502"]
+            },
+            2: {
+                name: "Circuit Breakers",
+                icon: "⚡",
+                price: "Contact for Price",
+                description: "Industrial-grade circuit breakers.",
+                specs: ["Voltage: 415V-36kV", "Current: 630A-4000A", "Standards: IEC 62271"]
+            },
+            3: {
+                name: "Solar Panels",
+                icon: "🔋",
+                price: "Contact for Price",
+                description: "High-efficiency photovoltaic panels.",
+                specs: ["Power: 400W-660W", "Efficiency: Up to 22%", "Warranty: 25 Years"]
+            }
+        };
+
+        let currentProduct = null;
+        let currentQuantity = 1;
+
         const mobileMenu = document.getElementById('mobileMenu');
         const navLinks = document.getElementById('navLinks');
 
@@ -712,41 +522,80 @@
             navLinks.classList.toggle('active');
         });
 
-        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth' });
                     navLinks.classList.remove('active');
                 }
             });
         });
 
-        // Scroll Animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+        function openProductModal(productId) {
+            currentProduct = products[productId];
+            currentQuantity = 1;
+            
+            document.getElementById('modalProductName').textContent = currentProduct.name;
+            document.getElementById('modalProductIcon').textContent = currentProduct.icon;
+            document.getElementById('modalProductPrice').textContent = currentProduct.price;
+            document.getElementById('modalProductDescription').textContent = currentProduct.description;
+            document.getElementById('quantityInput').value = 1;
+            
+            const specsList = document.getElementById('modalProductSpecs');
+            specsList.innerHTML = '';
+            currentProduct.specs.forEach(spec => {
+                const li = document.createElement('li');
+                li.textContent = spec;
+                specsList.appendChild(li);
             });
-        }, observerOptions);
+            
+            document.getElementById('productModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
-        document.querySelectorAll('.about-card, .service-card, .value-item, .team-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+        function closeProductModal() {
+            document.getElementById('productModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function increaseQuantity() {
+            currentQuantity++;
+            document.getElementById('quantityInput').value = currentQuantity;
+        }
+
+        function decreaseQuantity() {
+            if (currentQuantity > 1) {
+                currentQuantity--;
+                document.getElementById('quantityInput').value = currentQuantity;
+            }
+        }
+
+        function sendWhatsAppQuote() {
+            const whatsappNumber = "201029704749"; // CHANGE THIS NUMBER
+            
+            const message = `Hello Smart Business,
+
+I would like to request a quote for:
+
+*Product:* ${currentProduct.name}
+*Quantity:* ${currentQuantity}
+
+Please provide pricing and availability details.
+
+Thank you!`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappURL, '_blank');
+        }
+
+        document.getElementById('productModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProductModal();
+            }
         });
     </script>
 </body>
